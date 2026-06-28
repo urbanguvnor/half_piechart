@@ -1,7 +1,7 @@
 name: half_piechart
-description: "A new Flutter package project."
+description: "A new flutter package to help developers achieve a half piechart"
 version: 0.0.1
-homepage:
+homepage: https://github.com/urbanguvnor/half_piechart
 
 environment:
   sdk: ^3.11.3

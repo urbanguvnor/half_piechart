@@ -1,39 +1,45 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+# Half PieChart
+A new Flutter package that provides a half piechart for data visualisation
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+[Example] (https://github.com/urbanguvnor/half_piechart/blob/main/example/example.dart)
 
-```dart
-const like = 'sample';
+To use this package : *add the dependency to your [pubspec.yaml] file
+
+```yaml
+    dependencies:
+        flutter:
+            sdk : flutter
+        half_piechart: ^0.0.3
 ```
+## Add to your dart file
+```
+import 'package:flutter/material.dart';
+import 'package:half_piechart/half_piechart.dart';
 
-## Additional information
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+    return Scaffold(
+      body: Center(
+        child: SizedBox(
+          height: size.height * 0.40,
+          width: size.height * 0.32,
+          child: GaugeChartFlat(
+            percent: 60,
+            color: Color.fromRGBO(74, 222, 121, 1),
+            backgroundColor: Color.fromRGBO(122, 22, 22, 1),
+            strokeWidth: 20,
+            strokeCap: StrokeCap.round,
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
